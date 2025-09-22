@@ -11,7 +11,7 @@ Rita de Cássia Saldanha Bezerra
 - Como executar o programa localmente?
 Para executar a Loja_de_laços localmente deve-se seguir as seguintes instruções:
 1. Clonar o repositório:
-git clone https://github.com/raiwyzs/Loja-de-laços
+git clone https://github.com/raiwyzs/Loja-de-Lacos
 2. Acesse o repositório:
 cd Loja_de_laços
 3. Baixar as dependências do programa:
