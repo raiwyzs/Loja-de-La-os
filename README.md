@@ -13,7 +13,7 @@ Para executar a Loja_de_laços localmente deve-se seguir as seguintes instruçõ
 1. Clonar o repositório:
 git clone https://github.com/raiwyzs/Loja-de-Lacos
 2. Acesse o repositório:
-cd Loja_de_laços
+cd Loja_de_Lacos
 3. Baixar as dependências do programa:
 pip install -r requirements.txt
 4. Por fim execute o app.py e acesse o localhost.
