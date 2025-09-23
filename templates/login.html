@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<html>
+<head>
+    <title>{% block titulo %}Login{% endblock %}</title>
+</head>
+<body>
+    {% block conteudo %}
+    <h2>Login</h2>
+    {% if erro %}
+        <p style="color:red;">{{ erro }}</p>
+    {% endif %}
+    <form method="post">
+        E-mail: <input type="email" name="email" required><br>
+        Senha: <input type="password" name="senha" required><br>
+        <input type="submit" value="Entrar">
+    </form>
+    {% endblock %}
+</body>
+</html>
