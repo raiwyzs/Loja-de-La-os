@@ -1,1 +1,14 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block titulo %}Página Inicial{% endblock %}
+    {% block conteudo %}
+    <h1>Bem-vindo ao Sistema de Produtos</h1>
+    {% endblock %}
+</body>
+</html>
