@@ -15,5 +15,5 @@ git clone https://github.com/raiwyzs/Loja-de-Lacos
 2. Acesse o repositório:
 cd Loja_de_Lacos
 3. Baixar as dependências do programa:
-pip install -r requirements.txt
+pip install -r requeriments.txt
 4. Por fim execute o app.py e acesse o localhost.
