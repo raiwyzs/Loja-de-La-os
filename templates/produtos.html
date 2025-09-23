@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<html>
+<head>
+    <title>{% block titulo %}Produtos{% endblock %}</title>
+    {% block css_extra %}
+    <style>
+        .produtos-titulo {
+            color: purple;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .produtos-table tr:hover {
+            background-color: #eafaf1;
+        }
+        .produtos-form input[type="text"],
+        .produtos-form input[type="number"] {
+            margin-bottom: 8px;
+            padding: 5px;
+            width: 250px;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block conteudo %}
+    <h2 class="produtos-titulo">Lista de Produtos</h2>
+    <a class="botao" href="{{ url_for('criar_produto') }}">Novo Produto</a>
+    <table class="produtos-table">
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+        </tr>
+        {% for produto in produtos %}
+        <tr>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.preco }}</td>
+            <td>{{ produto.descricao }}</td>
+            <td>
+                <a class="botao" href="{{ url_for('editar_produto', id=produto.id) }}">Editar</a>
+                <a class="botao" href="{{ url_for('excluir_produto', id=produto.id) }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% if criar %}
+        <h3>Novo Produto</h3>
+        <form method="post" class="produtos-form">
+            Nome: <input type="text" name="nome" required><br>
+            Preço: <input type="number" step="0.01" name="preco" required><br>
+            Descrição: <input type="text" name="descricao" required><br>
+            <input type="submit" value="Cadastrar">
+        </form>
+    {% endif %}
+    {% if editar %}
+        <h3>Editar Produto</h3>
+        <form method="post" class="produtos-form">
+            Nome: <input type="text" name="nome" value="{{ produto.nome }}" required><br>
+            Preço: <input type="number" step="0.01" name="preco" value="{{ produto.preco }}" required><br>
+            Descrição: <input type="text" name="descricao" value="{{ produto.descricao }}" required><br>
+            <input type="submit" value="Salvar">
+        </form>
+    {% endif %}
+    <a href="{{ url_for('logout') }}">Sair</a>
+    {% endblock %}
+</body>
+</html>
